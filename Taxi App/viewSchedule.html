@@ -1,0 +1,107 @@
+<!-- The name of this HTML file is viewSchedule.html -->
+<!-- The purpose of this HTML file is to allow the user to view the list of bookings made -->
+<!-- Written by Chua Zi Ying -->
+<!-- Last Modifield : 2/5/2021 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-red.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/view.css">
+	<link rel="icon" href="img/logo.jpeg" sizes="20x20" type="image/jpeg">
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body background="img/history.jpg">
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+				<!-- Displays the image on the front page-->
+				<span class="mdl-layout-title"><img src="img/logo.jpeg" width="50" height="50"></span>
+				<!-- Add spacer, to align navigation to the right -->
+				<div class="mdl-layout-spacer"></div>
+				<!-- Title -->
+				<span class="mdl-layout-title"><B>View Scheduled Booking</B></span>
+				<!-- Add spacer, to align navigation to the right -->
+				<div class="mdl-layout-spacer"></div>
+				<!-- Displays the current time  -->
+				<h3><span class="mdl-layout-title" id="clock"> </span></h3>
+			</div>
+		</header>
+		<!-- Drawer -->
+		<div class="mdl-layout__drawer">
+			<span class="mdl-layout-title"><i>Pristine Cabs</i> <img src="img/logo.jpeg" width="40" height="40"
+					onclick="window.location = 'index.html'"><br>
+				<h6><i>Ride For All</i></h6>
+			</span>
+			<nav class="mdl-navigation">
+				<a class="mdl-navigation__link" href="index.html">Home</a>
+				<a class="mdl-navigation__link" href="viewSchedule.html">All Bookings</a>
+			</nav>
+		</div>
+		<!-- Page Content -->
+		<main class="mdl-layout__content">
+			<div class="page-content">
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-tablet"></div>
+					<div class="mdl-cell mdl-cell--7-col mdl-cell--3-col-tablet">
+						<header>
+							<h3>Scheduled Booking</h3>
+						</header>
+					</div>
+					<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet">
+						<button
+							class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+							onclick="window.location = `viewCurrent.html`">Current Booking</button>
+					</div>
+					<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet">
+						<button
+							class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+							onclick="window.location = `viewHistory.html`">History Booking</button>
+					</div>
+				</div>
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
+						<!-- begin item in this queue -->
+						<ul>
+							<li class="mdl-list__item mdl-list__item--three-line">
+								<span class="mdl-list__item-primary-content">
+									<i class="material-icons mdl-list__item-avatar">.☟.</i>
+									<span>From: Sunway Pyramid, To: Monash University</span>
+								</span>
+								<span class="mdl-list__item-secondary-content">
+									<a class="mdl-list__item-secondary-action"
+										onclick="window.location='viewScheduledBooking.html'"><i
+											class="material-icons">info</i></a>
+								</span>
+							</li>
+							<!-- end item in this queue -->
+							<!-- begin item in this queue -->
+							<li class="mdl-list__item mdl-list__item--three-line">
+								<span class="mdl-list__item-primary-content">
+									<i class="material-icons  mdl-list__item-avatar">.☟.</i>
+									<span>From: Pavillion, To: KLCC</span>
+								</span>
+								<span class="mdl-list__item-secondary-content">
+									<a class="mdl-list__item-secondary-action"
+										onclick="window.location='viewScheduledBooking.html'"><i
+											class="material-icons">info</i></a>
+								</span>
+							</li>
+							<!-- end item in this queue -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+	<!-- link js file -->
+	<script src="js/viewSchedule.js"></script>
+	<script src="js/shared.js"></script>
+</body>
+
+</html>

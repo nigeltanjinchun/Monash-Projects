@@ -1,0 +1,135 @@
+<!-- The name of this HTML file is taxiType.html -->
+<!-- The purpose of this HTML file is to allow the user to choose the taxi type made  -->
+<!-- Written by Chua Zi Ying & Tan Jin Chun -->
+<!-- Last Modified : 2/5/2021 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-red.min.css" />
+	<link rel="icon" href="img/logo.jpeg" sizes="20x20" type="image/jpeg">
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body background="img/background.jpg">
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+				<!-- Displays the image on the front page-->
+				<span class="mdl-layout-title"><img src="img/logo.jpeg" width="50" height="50"></span>
+				<!-- Add spacer, to align navigation to the right -->
+				<div class="mdl-layout-spacer"></div>
+				<!-- Title -->
+				<span class="mdl-layout-title"><B>Taxi Type</B></span>
+				<!-- Add spacer, to align navigation to the right -->
+				<div class="mdl-layout-spacer"></div>
+				<!-- Displays the current time  -->
+				<h3><span class="mdl-layout-title" id="clock"> </span></h3>
+			</div>
+		</header>
+		<!-- Drawer -->
+		<div class="mdl-layout__drawer">
+			<span class="mdl-layout-title"><i>Pristine Cabs</i> <img src="img/logo.jpeg" width="40" height="40"><br>
+				<h6><i>Ride For All</i></h6>
+			</span>
+			<nav class="mdl-navigation">
+				<a class="mdl-navigation__link" href="index.html">Home</a>
+				<a class="mdl-navigation__link" href="viewSchedule.html">All Bookings</a>
+			</nav>
+		</div>
+		<main class="mdl-layout__content">
+			<div class="page-content">
+				<!-- Main Content of page -->
+				<div class="mdl-grid">
+					<!-- empty first col -->
+					<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet"></div>
+					<!-- second col -->
+					<div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet">
+						<h3>Please Choose Your Desired Taxi:</h3>
+						<hr>
+						<h4>
+							<!-- radio button for budget taxi-->
+							<img src="img/budgetTaxi.jpg" width="150" height="100">
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="budgetTaxi">
+								<input type="radio" id="budgetTaxi" class="mdl-radio__button" name="taxi" value="car">
+								<span class="mdl-radio__label"><b>Budget Taxi </b></span>
+							</label>
+						</h4>
+						<hr>
+						<h4>
+							<!-- radio button for Executive taxi or known as SUV-->
+							<img src="img/executiveTaxi.jpg" width="150" height="100">
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="executiveTaxi">
+								<input type="radio" id="executiveTaxi" class="mdl-radio__button" name="taxi"
+									value="suv">
+								<span class="mdl-radio__label"><b>Executive Taxi</b></span>
+							</label>
+						</h4>
+						<hr>
+						<h4>
+							<!-- radio button for Van-->
+							<img src="img/6Seater.png" width="150" height="100">
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="6-seaterCar">
+								<input type="radio" id="6-seaterCar" class="mdl-radio__button" name="taxi" value="van">
+								<span class="mdl-radio__label"><b>Van</b></span>
+							</label>
+						</h4>
+						<hr>
+						<h4>
+							<!-- radio button for mini bus-->
+							<img src="img/miniBus.jpg" width="150" height="130">
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="premiumCar">
+								<input type="radio" id="premiumCar" class="mdl-radio__button" name="taxi"
+									value="minibus">
+								<span class="mdl-radio__label"><b>Mini Bus</b></span>
+							</label>
+						</h4>
+						<hr>
+						<div class="mdl-grid">
+							<!-- first column from the middle-->
+							<div class="mdl-cell mdl-cell--1-col mdl-cell--0-col-tablet"></div>
+							<!-- second column from the middle-->
+							<div class="mdl-cell mdl-cell--5-col mdl-cell--4-col-tablet"
+								style="background-color: #84b98756; color: #f54c09; padding: 10px;">
+								<!--Total Distance in km-->
+								<label><b>Total Distance:</b></label>
+								<span id="totalDistance" class="totalDistance-content" type="text"></span><i>km</i>
+							</div>
+							<!--third column from the middle-->
+							<div class="mdl-cell mdl-cell--5-col mdl-cell--4-col-tablet"
+								style="background-color: #88d6db56; color: #f3730a; padding: 10px;">
+								<label><b>Fares: </b></label><i>RM</i>
+								<span id="fares" class="fares-content" type="text"></span>
+							</div>
+							<!-- Closing the middle column-->
+							<div class="mdl-cell mdl-cell--1-col mdl-cell--0-col-tablet">
+							</div>
+							<!--Back Button-->
+							<button
+								class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+								onclick="back()"> Back </button>
+							<pre class="tab"> </pre>
+							<!--clear the radios button-->
+							<button
+								class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+								onclick="clearRadioButton()"> Clear Choices </button>
+							<pre class="tab"> </pre>
+							<!--continue button-->
+							<button
+								class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+								onclick="proceed()"> Continue </button>
+						</div>
+					</div>
+				</div>
+		</main>
+	</div>
+	<!-- link js file -->
+	<script src="js/taxiType.js"></script>
+	<script src="js/shared.js"></script>
+</body>
+
+</html>

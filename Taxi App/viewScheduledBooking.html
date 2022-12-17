@@ -1,0 +1,174 @@
+<!-- The name of this HTML file is viewScheduledBooking.html -->
+<!-- The purpose of this HTML file is to allow the user to view the information of a booking -->
+<!-- Written by Jayden George -->
+<!-- Last Modifield : 4/5/2021 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-red.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/viewBooking.css">
+    <link rel="icon" href="img/logo.jpeg" sizes="20x20" type="image/jpeg">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---->
+    <style type="text/css">
+        #map {
+            width: 45vw;
+            height: 65vh
+        }
+    </style>
+    <!-- Import Mapbox library -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet'>
+</head>
+
+<body background="img/viewBooking.jpg">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Displays the image on the front page-->
+                <span class="mdl-layout-title"><img src="img/logo.jpeg" width="50" height="50"></span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Title -->
+                <span class="mdl-layout-title"><B>Scheduled Booking Details</B></span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Displays the current time  -->
+                <h3><span class="mdl-layout-title" id="clock"> </span></h3>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title"><i>Pristine Cabs</i> <img src="img/logo.jpeg" width="40" height="40"><br>
+                <h6><i>Ride For All</i></h6>
+            </span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="index.html">Home</a>
+                <a class="mdl-navigation__link" href="viewSchedule.html">All Bookings</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content" id="page-content">
+                <!-- Main Content of page -->
+                <div class="mdl-grid">
+                    <!-- empty first col -->
+                    <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-tablet"></div>
+                    <!--second column-->
+                    <div class="mdl-cell mdl-cell--9-col mdl-cell--4-col-tablet">
+                        <div>
+                            <span class="mdl-list__item-primary-content">
+                                <span>
+                                    <h3>Subang</h3>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <!--third column-->
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet">
+
+                        <!-- Colored FAB button with ripple -->
+                        <button
+                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"
+                            onclick="deleteScheduleBooking()">
+                            <i class="material-icons">delete</i>
+                        </button>
+                        <!-- Colored FAB button with ripple -->
+                        <button
+                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"
+                            onclick="changeTaxi()">
+                            <i class="material-icons">edit</i>
+                        </button>
+                    </div>
+                    <!--first empty column-->
+                    <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-tablet"></div>
+                    <!--second column-->
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet">
+                        <br>
+                        <div>
+                            <!--Shows date of the future booking-->
+                            <h5>Start Time:
+                                <span class="mdl-list__item-primary-content">
+                                    <span>time</span>
+                                </span>
+                            </h5>
+                        </div><br>
+                        <hr>
+                        <div>
+                            <div>
+                                <!--Shows the start location of the future booking-->
+                                <h5>Start location:
+                                    <span class="mdl-list__item-primary-content">
+                                        <span>KLCC</span>
+                                    </span>
+                                </h5>
+                            </div><br>
+                            <hr>
+                            <div>
+                                <!--Shows list of stops of the trip-->
+                                <h5>Stop location 1:
+                                    <span class="mdl-list__item-primary-content">
+                                        <span>Setapak</span>
+                                    </span>
+                                </h5>
+                            </div>
+                            <br>
+                            <hr>
+                            <div>
+                                <h5>Stop location 2:
+                                    <span class="mdl-list__item-primary-content">
+                                        <span>SS15</span>
+                                    </span>
+                                </h5>
+                            </div>
+                            <br>
+                            <hr>
+                            <div>
+                                <!--Shows the final location/ destination of the booking-->
+                                <h5>Final location:
+                                    <span class="mdl-list__item-primary-content">
+                                        <span>Subang</span>
+                                    </span>
+                                </h5>
+                            </div>
+                            <br>
+                            <hr>
+                            <div>
+                                <!--Shows the taxi type used in future booking-->
+                                <h5>Taxi Type:
+                                    <span class="mdl-list__item-primary-content">
+                                        <span>#1</span>
+                                    </span>
+                                </h5>
+                            </div>
+                            <br>
+                            <hr>
+                            <div>
+                                <!--Shows total taxi fare of the future booking-->
+                                <h5>Taxi Fare:
+                                    <span class="mdl-list__item-primary-content">
+                                        <span>#1</span>
+                                    </span>
+                                </h5>
+                            </div>
+                            <br>
+                            <hr>
+                        </div>
+                    </div>
+                    <!--third column-->
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--3-col-tablet">
+                        <!-- The location where the map will show up -->
+                        <div id="map"></div>
+                    </div>
+                </div>
+        </main>
+    </div>
+    <!-- linking js file -->
+    <script src="js/shared.js"></script>
+    <script src="js/viewScheduledBooking.js"></script>
+</body>
+
+</html>
