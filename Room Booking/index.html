@@ -1,0 +1,64 @@
+<!-- HTML File -->
+<!-- Assignment 1a -->
+<!-- The purpose of this HTML file is to display to the user the booking time on the single simple page web app -->
+<!-- Written by Tan Jin Chun -->
+<!-- Task 4 -->
+<!-- Last Modified : 31/3/2021 -->
+
+<!DOCTYPE html>
+<!-- Setting the language to English-->
+<html lang = "en">
+<head>
+
+    <!-- Specifies the chracter encoding for the HTML Document(UTF-8 covers most of the chracter in the world)-->
+    <meta charset = "UTF-8">
+    <title>Assignment 1a</title>
+    <style> 
+        div {
+	    padding-bottom: 10px;
+        }
+    </style>
+    <!-- Defer bascically tells the browser to wait until it's ready before executing the javascript code-->
+    <script defer type="text/javascript" src="js/main.js" ></script>
+</head>
+<body>
+    <div>
+        <h1>Room Booking Page</h1>
+        <h4>Time: <span id="timeNow"></span></h4>
+    </div>
+    <div>
+        <label for="inputTime">Start Time:</label>
+        <select id="inputTime">
+            <option label="(empty)" value=""></option>
+            <option label="8am" value="08:00"></option>
+            <option label="9am" value="09:00"></option>
+            <option label="10am" value="10:00"></option>
+            <option label="11am" value="11:00"></option>
+            <option label="12pm" value="12:00"></option>
+            <option label="1pm" value="13:00"></option>
+            <option label="2pm" value="14:00"></option>
+            <option label="3pm" value="15:00"></option>
+            <option label="4pm" value="16:00"></option>
+            <option label="5pm" value="17:00"></option>
+        </select>
+    </div>
+    <div>
+        <label for="inputReason">Booking Reason:</label>
+        <input type="text" id="inputReason"></input>
+    </div>
+    <div>
+        <label for="inputLabel">Booking Text To Be Shown:</label>
+        <input type="text" id="inputLabel"></input>
+    </div>
+    <div>
+        <button onclick="doBooking()">Book Room</button>
+    </div>
+    <div>
+        <h3>Booking Status</h3>
+        <div id="output"></div>
+    </div>
+    <footer>
+        <button onclick="clearAllBookings()">Clear All Bookings</button>
+    </footer>
+</body>
+</html>
